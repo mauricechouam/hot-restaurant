@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
         integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 
-    <title>Hot Restaurant | Reservations</title>
+    <title>Hot Restaurant</title>
 </head>
 
 <body>
@@ -37,15 +37,15 @@
     <div class="container">
         <form>
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="reserve-name">
             <div class="form-group">
             </div>
             <label for="phoneNumber">Phone Number</label>
-            <input type="text" class="form-control" id="phoneNumber">
+            <input type="text" class="form-control" id="reserve-phone">
             <div class="form-group">
             </div>
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" class="form-control" id="reserve-email">
             <div class="form-group">
             </div>
             <label for="id">Unique ID</label>
@@ -63,7 +63,7 @@
     </footer>
     <script type="text/javascript">
         // on click function
-        $(".submit").on("click", function (event) {
+        $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             // Here we grab the form elements
             const newReservation = {
@@ -83,13 +83,14 @@
                     else {
                         alert("Sorry you are on the wait list");
                     }
-                    // Clear the form when submitting
+                    // Clear the form when submittingnode 
                     $("#reserve-name").val("");
                     $("#reserve-phone").val("");
                     $("#reserve-email").val("");
                 });
         });
     </script>
+
 </body>
 
 </html>
