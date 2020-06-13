@@ -28,7 +28,7 @@ app.get("/reserve", function (req, res) {
 
 // API
 app.get("/api/tables", function (req, res) {
-    return res.json(tables);
+    return res.json(reservations);
 });
 
 app.get("/api/waitlist", function (req, res) {
