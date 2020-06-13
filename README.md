@@ -1,5 +1,7 @@
 # Hot Restaurant
   ![badge](https://img.shields.io/badge/License-Open-blue.svg)
+  ![GitHub language count](https://img.shields.io/github/languages/count/chaseyb/hot-restaurant)
+![GitHub top language](https://img.shields.io/github/languages/top/chaseyb/hot-restaurant)
 
   ## Table of Contents
   - [Description](#description)
