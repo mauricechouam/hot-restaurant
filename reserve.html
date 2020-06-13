@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
         integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
 
-    <title>Hot Restaurant</title>
+    <title>Hot Restaurant | Reservations</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
             <hr class="my-4">
             <h2>Make Your Reservation</h2>
             <div class="row justify-content-center">
-                <a class="btn btn-primary btn-lg viewTable" href="/tables" role="button"><i
-                        class="far fa-list-alt"></i> View Tables</a>
+                <a class="btn btn-primary btn-lg viewTable" href="/tables" role="button"><i class="far fa-list-alt"></i>
+                    View Tables</a>
                 <a class="btn btn-info btn-lg viewTable" href="/" role="button"><i class="fas fa-home"></i> </a>
             </div>
         </div>
@@ -63,30 +63,33 @@
     </footer>
     <script type="text/javascript">
         // on click function
-        $(".submit").on("click", function(event) {
-          event.preventDefault();
-          // Here we grab the form elements
-          const newReservation = {
-            customerName: $("#reserve-name").val().trim(),
-            phoneNumber: $("#reserve-phone").val().trim(),
-            customerEmail: $("#reserve-email").val().trim(),
-          };
-          console.log(newReservation);
-          // posts data to new reservation table
-          $.post("/api/tables", newReservation,
-            function(data) {
-              // If a table is available the app tells user they are booked
-              if (data) {
-                alert("You are officially booked!");
-              }
-              // If a table is unavailable the app tells user they on the waiting list
-              else {
-                alert("Sorry you are on the wait list");
-              }
-              // Clear the form when submitting
-              $("#reserve-name").val("");
-              $("#reserve-phone").val("");
-              $("#reserve-email").val("");
-            });
+        $(".submit").on("click", function (event) {
+            event.preventDefault();
+            // Here we grab the form elements
+            const newReservation = {
+                customerName: $("#reserve-name").val().trim(),
+                phoneNumber: $("#reserve-phone").val().trim(),
+                customerEmail: $("#reserve-email").val().trim(),
+            };
+            console.log(newReservation);
+            // posts data to new reservation table
+            $.post("/api/tables", newReservation,
+                function (data) {
+                    // If a table is available the app tells user they are booked
+                    if (data) {
+                        alert("You are officially booked!");
+                    }
+                    // If a table is unavailable the app tells user they on the waiting list
+                    else {
+                        alert("Sorry you are on the wait list");
+                    }
+                    // Clear the form when submitting
+                    $("#reserve-name").val("");
+                    $("#reserve-phone").val("");
+                    $("#reserve-email").val("");
+                });
         });
-      </script>
+    </script>
+</body>
+
+</html>

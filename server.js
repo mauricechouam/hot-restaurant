@@ -9,15 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Array template - Push to here - 
-const tables = [
-    {
-        customerName: "",
-        phoneNumber: "",
-        customerEmail: "",
-        id: ""
-    }
-]
+// arrays for table objects
+const reservations = [];
+const waitlist = [];
 
 // Routes
 app.get("/", function (req, res) {
@@ -41,25 +35,17 @@ app.get("/api/waitlist", function (req, res) {
     return res.json(waitlist);
 });
 
-/* WRITE code to add reservations up to 5, then waitlist */
+/* add reservations up to 5, then waitlist */
 app.post("/api/tables", function (req, res) {
 
     const newTable = req.body;
-    // more code...
-    // create with table name stripped of blank spaces
     newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
 
-    /* Experimental Bonus: verify email is proper syntax
-    const email = /\S+@\S+\.\S+/;
-    let realEmail = email.test(val);
-    if (realEmail) {
-        newTable.email = realEmail;
-    } */
-
-    console.log(newTable);
-
-    tables.push(newTable);
-
+    if (reservations.length < 5) {
+        reservations.push(newTable);
+    } else {
+        waitlist.push(newTable);
+    };
 });
 
 // Listen
