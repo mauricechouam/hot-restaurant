@@ -16,7 +16,6 @@
   ## Install
   ```
   npm install
- 
   ```
           
   ## Usage
