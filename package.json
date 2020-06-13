@@ -1,8 +1,11 @@
 {
   "name": "hot-restaurant",
   "version": "1.0.0",
-  "description": "A basic app used to help schedule reservation requests",
+  "description": "Hot Restaurant Reseravtion System",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/chaseyb/hot-restaurant.git"
   },
-  "author": "Chase, David, Maurice",
+  "author": "Chase Johnson, Maurice Chouamou, David Metcalf",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chaseyb/hot-restaurant/issues"
